@@ -140,13 +140,12 @@ Rules:
 - Keep answer concise (4–7 lines max)
 
 Context:
-{}
+{context}
 
 Question:
-{}
+{query}
 
 Answer:"""
-
         response = model.generate_content(prompt)
 
         sources = list(set(r["meta"].get("source", "") for r in results))
