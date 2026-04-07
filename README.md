@@ -30,8 +30,8 @@ A powerful AI-powered document assistant that combines Retrieval-Augmented Gener
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/hybrid-rag-assistant.git
-   cd hybrid-rag-assistant
+   git clone https://github.com/SathishP100sms/Hybrid-RAG-AI-Assistant
+   cd Hybrid-RAG-Assistant
    ```
 
 2. **Install dependencies**
