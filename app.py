@@ -62,7 +62,7 @@ st.markdown('<h1 class="main-header">📚 Hybrid RAG AI Assistant</h1>', unsafe_
 with st.sidebar:
     st.header("⚙️ Settings")
     
-    api_key = st.secrets("GEMINI_API_KEY")
+    api_key = st.secrets["GEMINI_API_KEY"]
     
     if api_key:
         try:
@@ -105,7 +105,7 @@ with st.sidebar:
             st.error(f"Error configuring API: {str(e)}")
             st.stop()
     else:
-        st.warning("Sorry the API did't load")
+        st.warning("Sorry the API did't load, try again later")
         st.stop()
 
 # =========================
