@@ -82,9 +82,6 @@ A powerful AI-powered document assistant that combines Retrieval-Augmented Gener
 3. **Reranking**: Results are reranked using a cross-encoder for better relevance
 4. **Generation**: The top results form the context for the AI model to generate answers
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
@@ -97,12 +94,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Sentence Transformers](https://www.sbert.net/) for embeddings
 - [Google Gemini](https://ai.google.dev/) for AI generation
 - [Streamlit](https://streamlit.io/) for the web interface
-
-## 📞 Support
-
-If you have any questions or issues, please open an issue on GitHub.
-
----
-
-**Made with ❤️ using Streamlit and Google's Gemini AI**</content>
-<parameter name="filePath">c:\Users\ELCOT\Downloads\RAG System sample APP\README.md
