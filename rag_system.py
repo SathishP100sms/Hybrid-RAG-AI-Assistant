@@ -129,16 +129,23 @@ class HybridRAG:
         context = "\n\n".join([r["text"] for r in results])
 
         prompt = f"""
-        Answer using only the context.
+You are an AI assistant answering from multiple documents.
 
-        Context:
-        {context}
+Rules:
+- Use ONLY the provided context
+- Prefer the most relevant source
+- Do NOT mix unrelated documents
+- If partial info exists, answer carefully
+- If not found, say "I don't know"
+- Keep answer concise (4–7 lines max)
 
-        Question:
-        {query}
+Context:
+{}
 
-        Answer:
-        """
+Question:
+{}
+
+Answer:"""
 
         response = model.generate_content(prompt)
 
