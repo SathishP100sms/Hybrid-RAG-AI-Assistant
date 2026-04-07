@@ -2,6 +2,8 @@
 
 A powerful AI-powered document assistant that combines Retrieval-Augmented Generation (RAG) with hybrid search capabilities. Upload your documents and chat with an AI that provides accurate answers based on your content.
 
+## Live Demo [Hybrid RAG AI Assistant](https://hybrid-rag-ai-assistant.streamlit.app/)
+
 ## 🚀 Features
 
 - **Hybrid Search**: Combines semantic vector search with BM25 keyword search for optimal retrieval
