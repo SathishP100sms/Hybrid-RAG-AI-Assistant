@@ -85,7 +85,7 @@ with st.sidebar:
             except:
                 doc_count = 0
             
-            st.success("✅ API Key configured and RAG initialized!")
+            st.success("✅ API configured and RAG initialized!")
             st.markdown(f'<div class="status-box">📄 Documents in knowledge base: {doc_count}</div>', unsafe_allow_html=True)
             
             # Clear chat button
