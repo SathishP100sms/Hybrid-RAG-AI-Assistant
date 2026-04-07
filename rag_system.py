@@ -1,5 +1,3 @@
-# rag_system.py
-
 import os
 from langchain_community.document_loaders import PyMuPDFLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -72,6 +70,11 @@ class HybridRAG:
         self.text_chunks = data["documents"]
         self.metadatas = data["metadatas"]
 
+        # Prevent ZeroDivisionError if no documents are present
+        if not self.text_chunks:
+            self.bm25 = None
+            return
+
         tokenized = [doc.lower().split() for doc in self.text_chunks]
         self.bm25 = BM25Okapi(tokenized)
 
@@ -84,6 +87,10 @@ class HybridRAG:
             "meta": d.metadata,
             "score": 1.0
         } for d in vector_docs]
+
+        # FIX: Handle case where BM25 is not built due to no documents
+        if self.bm25 is None:
+            return vector_results
 
         bm25_scores = self.bm25.get_scores(query.lower().split())
         top_idx = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:self.k]
@@ -138,3 +145,4 @@ class HybridRAG:
         sources = list(set(r["meta"].get("source", "") for r in results))
 
         return response.text, sources
+
